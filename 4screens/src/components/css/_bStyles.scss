@@ -1,0 +1,40 @@
+
+@mixin gStyles() {
+    margin: 0px auto;
+    padding: 0px;
+    font-family: "Poppins-Light.ttf";
+}
+
+@mixin button() {
+    width: 30%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(8, 72, 47);
+    transition: 0.3;
+    font-size: large;
+    height: 70px;
+
+    &:hover {
+        background-color: rgb(39, 96, 39);
+        cursor: pointer;
+        box-shadow: inset 1px 1px 4px 4px rgb(9, 37, 9);
+    }
+}
+
+@mixin content() {
+    margin-top: 5%;
+    width: 80%;
+    border-radius: 5px;
+    height: 1000px;
+}
+
+@mixin input() {
+    background-color: rgb(9, 44, 9);
+    border: none;
+    border-radius: 10px;
+    height: 30%;
+    font-size: large;
+    outline: none;
+    padding-left: 1%;
+    color: gray;
+}
