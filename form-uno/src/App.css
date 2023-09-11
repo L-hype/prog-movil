@@ -1,0 +1,107 @@
+* {
+  margin: 0px auto;
+  padding: 0px;
+  color: azure;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.todo {
+  height: auto;
+  font-family: Arvo; 
+}
+
+body{
+  background-image: url(/assets/fondoAzul.jpg);
+}
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 5%;
+  background-color: RGB(11,18,60);
+  border: none;
+  cursor: pointer;
+  width: 35%;
+  transition: 0.3s;
+  font-size: large;
+  margin-left: 1%;
+}
+button:hover{
+  box-shadow: 0px 0px 0px 1px inset blue;
+  background-color: darkblue;
+}
+
+.barra {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: RGB(11,18,60);
+  align-items: center;
+  
+}
+h1{color: RGB(154,160,166);
+font-family: Arvo;}
+h2{color: RGB(154,160,166);
+  font-family: Arvo;
+}
+.h1-cont{
+  padding-top: 1%;
+}
+h2{
+  text-align: center;
+  padding-top: 1%;
+  
+}
+
+.btn-cancel:hover{
+background-color: rgb(83, 13, 8);
+}
+.formulario,.contador{
+  border: 2px solid RGB(27,50,171);
+  width: auto;
+  height: auto;
+  backdrop-filter: blur(20px);
+  text-align: center;
+  border-radius: 50px;
+  padding: 15px;
+  margin-top: 2%;
+  
+}
+.contador > button:active{
+  background-color: blue;
+}
+
+.menu ul {
+  display: inline-flex;
+  list-style: none;
+}
+
+.content {
+  width: 80%;
+  height: 100%;
+  background-size: cover;
+}
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid gainsboro;
+  outline: none;
+  margin-top: 20px 
+}
+input::selection{
+  background-color: darkblue;
+}
+
+label {
+  padding-top: 30px;
+  color: gainsboro;
+  font-family: Arvo;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns:25% 25% 25% 25%;
+  grid-template-rows:160px 160px;
+  margin-top: 5%;
+}
+
+
