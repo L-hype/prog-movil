@@ -27,33 +27,30 @@ export const styles = StyleSheet.create({
     fontSize: 19,
     color: 'white',
     backgroundColor: 'rgba(122,136,204,0.4)',
-
   },
   padLogIcon: {
     marginTop: '23%',
     marginLeft: '59%',
   },
   userIcon: {
-    marginTop: '37%',
+    marginTop: '39%',
     marginLeft: '59%',
   },
   forgotPassContainer: {
     position: 'absolute',
-    marginTop: '200%'
+    marginTop: '195%'
   },
   textForgotPass: {
     color: 'rgb(85,43,153)',
-    marginTop: 10,
+    
     fontSize: 20
   },
 
   //template styles:-----------------------------------
-
   container: {
     flex: 1,
     backgroundColor: '#901090',
     alignItems: 'center',
-
   },
   back: {
     width: '100%',
@@ -66,7 +63,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'transparent',
     alignItems: 'center',
-    borderWidth: 8,
+    borderWidth: 0,
     borderColor: 'rgb(96,134,204)',
     marginTop: '5%',
     borderRadius: 30,
@@ -94,20 +91,18 @@ export const styles = StyleSheet.create({
     marginTop: '58%'
   },
   button: {
-    marginTop: '32%',
+    marginTop: '31%',
     width: '35%',
     height: '6%',
     color: 'rgba(102,136,204,0.6)',
     borderRadius: 35,
     padding: '4.5%',
     backgroundColor: 'rgba(102,136,204,0.6)',
-
   },
   screenName: {
     fontSize: 38,
     color: 'rgb(102,136,204)'
   }
 })
-
 
 

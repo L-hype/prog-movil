@@ -1,13 +1,15 @@
 import { Template } from './template'
 import { TextInput, View, Text } from 'react-native'
-import { styles } from './styles/styles'
+import { styles } from '../styles/styles'
 
-export function ForgotPassScreen() {
+export function ForgotPassScreen({navigation}) {
     return (
         <Template
-            buttonText={'Enviar'}
+            buttonText={'Enviar' }
             screenName={'Enviar codigo'}
             widthBtn={{ marginTop: '90%' }}
+            desireScreen={'reset password'}//es la pantalla a la que quiero que valla 
+            navigation={navigation}
         >
             <View style={styles.formContainer}>
                 <Text style={styles.text}>Correo:</Text>
