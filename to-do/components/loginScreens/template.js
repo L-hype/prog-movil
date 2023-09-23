@@ -29,12 +29,8 @@ export function Template({ children, buttonText, screenName, widthBtn,navigation
                     style={[styles.button, widthBtn]} 
                     onPress={()=>{navigation.navigate(desireScreen) ,submit
                     }}
-                    
-                    
                        >
                         <Text
-
-
                             style={{
                                 textAlign: 'center',
                                 fontSize: 24, marginTop: -13, color: 'white'

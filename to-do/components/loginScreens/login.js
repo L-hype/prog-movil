@@ -13,8 +13,7 @@ export function LoginScreen({ navigation }) {
       nombre: '',
       password: ''
     },
-    
-    
+      
     validationSchema: Yup.object({
       nombre: Yup.string().max(45).min(3).required(),
       password: Yup.string().min(6).required()
@@ -22,7 +21,6 @@ export function LoginScreen({ navigation }) {
     }),
   })
   
-
   if (!/[a-zA-Z]+/.test(formik.values.nombre)) {
     formik.errors.nombre = 'escribe un nombre valido';
   }
@@ -89,7 +87,6 @@ export function LoginScreen({ navigation }) {
       </Pressable>      
     </Template>
   )
-  
 }
 
 

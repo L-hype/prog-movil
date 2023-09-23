@@ -18,7 +18,6 @@ export function ResetPasswordScreen({ navigation }) {
         })
     })
 
-    
     console.log(formikRP.errors.password)
 
     return (
