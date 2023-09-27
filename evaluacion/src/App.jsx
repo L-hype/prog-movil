@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./App.css";
+import { Tabla } from "./Tabla";
 
-export function Formulario() {
-  const [nombre, setNombre] = useState();
+export function Formulario(props) {
+  const prueba = [4, 4, 3, 2, 2];
+  const [info, setInfo] = useState({
+    apellidoPat: "",
+    apellidoMat: "",
+    nombres: "",
+    telefono: "",
+  });
+
+  const data = [];
 
   const formik = useFormik({
     initialValues: {
@@ -13,76 +22,100 @@ export function Formulario() {
       nombres: "",
       telefono: "",
     },
-    
-    onSubmit: (v) => {
-      console.log(v);
+
+    onSubmit: (values) => {
+      data.push(values);
+      console.log(data[1]);
     },
     //validacion
     validationSchema: Yup.object({
       apellidoPat: Yup.string().required(),
       apellidoMat: Yup.string().required(),
-      nombres: Yup.string().required("is required"),
-      telefono: Yup.string().required("is required"),
+      nombres: Yup.string().required(),
+      telefono: Yup.number().required(),
     }),
   });
-  if (!/[a-zA-Z]+/.test(formik.values.apellidoPat)) {
-    formik.errors.apellidoPat = "escribe un apellido valido";
-  } else formik.errors.apellidoPat = " ";
-
-  if (!/[a-zA-Z]+/.test(formik.values.apellidoMat)) {
-    formik.errors.apellidoMat = "escribe un apellido valido";
-  } else formik.errors.apellidoMat = "";
-
-  if (!/[a-zA-Z]+/.test(formik.values.nombres)) {
-    formik.errors.nombres = "escribe un nombre valido";
-  } else formik.errors.nombres = "";
-
-  if (!/[a-zA-Z]+/.test(formik.values.telefono)) {
-    formik.errors.telefono = "escribe un nombre valido";
-  } else formik.errors.telefono = "";
-
-  const borrar = () => {
-    window.location.reload();
-  };
-
-
 
   return (
-    <form onSubmit={formik.handleSubmit} className="formulario">
-      <h2>Registro</h2>
-      <div className="inputs">
-        <label id="apellidoPa">
-          Apellido paterno:
+    <>
+      <form onSubmit={formik.handleSubmit} className="formulario">
+        <h2>Registro{data[0]}</h2>
+        <div className="inputs">
+          <label id="apellidoPa">
+            Apellido paterno:
+            <br></br>
+            <input
+              type="text"
+              placeholder="Hernandez"
+              name="apellidoPat"
+              value={formik.values.apellidoPat}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></input>
+          </label>
+          <label className="errors">
+            {formik.touched.apellidoPat ? formik.errors.apellidoPat : ""}
+          </label>
+
           <br></br>
-          <input type="text" placeholder="escribe" name="apellidoPat"></input>
-        </label>
-        <label className="errors">{formik.errors.apellidoPat}</label>
 
-        <br></br>
+          <label>
+            Apellido Materno:
+            <br></br>
+            <input
+              type="text"
+              name="apellidoMat"
+              value={formik.values.apellidoMat}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></input>
+          </label>
+          <label className="errors">
+            {formik.touched.apellidoMat ? formik.errors.apellidoMat : ""}
+          </label>
 
-        <label>
-          Apellido Materno:
-          <br></br>
-          <input type="text" name="apellidoMat"></input>
-        </label>
-        <label className="errors">{formik.errors.apellidoMat}</label>
+          <label>
+            Nombres(s):<br></br>
+            <input
+              type="text"
+              name="nombres"
+              value={formik.values.nombres}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></input>
+          </label>
+          <label className="errors">
+            {formik.touched.nombres ? formik.errors.nombres : ""}
+          </label>
 
-        <label>
-          Nombres(s):<br></br>
-          <input type="text" name="nombres"></input>
-        </label>
-        <label className="errors">{formik.errors.nombres}</label>
+          <label>
+            Telefono:<br></br>
+            <input
+              type="text"
+              name="telefono"
+              value={formik.values.telefono}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></input>
+          </label>
+          <label className="errors">
+            {formik.touched.telefono ? formik.errors.telefono : ""}
+          </label>
+        </div>
+        <button type="submit">Enviar</button>
+        <button type="button" className="btn-cancel" onClick={formik.resetForm}>
+          Cancelar
+        </button>
+      </form>
+      <h5>
+        {data.map((d) => {
+          return <h3>{d.nombres}hola</h3>;
+        })}
+      </h5>
 
-        <label>
-          Telefono:<br></br>
-          <input type="text" name="telefono"></input>
-        </label>
-        <label className="errors">{formik.errors.telefono}</label>
-      </div>
-      <button type="submit">Enviar</button>
-      <button type="button" className="btn-cancel" onClick={borrar}>
-        Cancelar
-      </button>
-    </form>
+
+     
+      <Tabla info={data}></Tabla>
+    </>
   );
 }

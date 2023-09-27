@@ -7,7 +7,11 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     
-    <Formulario></Formulario>
+    <Formulario
+    title='formulario'
+    
+    
+    />
 
   </React.StrictMode>,
 )

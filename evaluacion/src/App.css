@@ -48,7 +48,7 @@ background-color: rgb(83, 13, 8);
 }
 .formulario{
   
-  width: 170%;
+  width: 700px;
   height: auto;
   backdrop-filter: blur(20px);
   text-align: center;
@@ -78,6 +78,7 @@ label {
   padding-top: 30px;
   color: gainsboro;
   font-family: Arvo;
+
 }
 
 .inputs {
